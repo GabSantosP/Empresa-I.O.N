@@ -127,6 +127,10 @@ body {
 /* tudo acima é do menu*/
 
 /* primeira parte */
+.primeiro{
+    position: relative;
+}
+
 .capa{
     width: 100%;
     height: 80vh;
@@ -134,16 +138,11 @@ body {
     top: 0px;
 }
 
-.primeiro{
-    position: relative;
-}
-
-
 .apresenta {
     position: absolute;
     color: #fff;
     top: 12vh;      
-    left: 5vw;      
+    left: 3vw;      
     font-size: 3vw; 
     font-family: 'Helvetica';
     letter-spacing: 0.2vw;
@@ -151,6 +150,7 @@ body {
 }
 
 .apresenta2 {
+    margin-top: 3rem;
     position: absolute;
     color: #fff;
     top: 40vh;
@@ -162,42 +162,40 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 999px) {
+
+    .primeiro{
+        position: relative;
+    }
+
+    .capa{
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    top: 0px;
+    }
+
+    
     .apresenta {
-        top: 15vh;      
-        left: 4vw;      
-        font-size: 5vw; 
+        top: 18vh;      
+        left: 3vw;      
+        font-size: 7vw; 
         letter-spacing: 0.3vw;
         word-spacing: 1.5vw;
     }
 
     .apresenta2 {
-        top: 35vh;
+        margin-top: 2rem;
+        top: 38vh;
         left: 4vw;
-        font-size: 3.5vw;
+        font-size: 4vw;
         letter-spacing: 0.25vw;
         word-spacing: 1vw;
     }
 }
 
 
-@media (max-width: 480px) {
-    .apresenta {
-        top: 8vh;      
-        left: 3vw;      
-        font-size: 6vw; 
-        letter-spacing: 0.4vw;
-        word-spacing: 2vw;
-    }
 
-    .apresenta2 {
-        top: 25vh;
-        left: 3vw;
-        font-size: 4.5vw;
-        letter-spacing: 0.3vw;
-        word-spacing: 1.5vw;
-    }
-}
 
 .espaco{
     position: relative;
@@ -273,6 +271,68 @@ body {
     width: 80vw; 
 }
 
+@media (max-width: 999px) {
+.top1{
+    width: 100%;
+    height: 15vh;
+    display: grid;
+    position: relative;
+    top: 80vh;
+    place-items: center;
+    background: linear-gradient(to right, #382158,#322D73,#251E8D);
+    color: #fff;
+    font-family: 'Helvetica';
+
+
+}
+
+.segundo{ 
+    width: 100%;
+    height: 70vh;
+    background-color: #1C1B2A;
+    position: absolute;
+    top: 100vh;
+}
+
+.quadrado{
+    position: absolute;
+    width: 42vw;
+    height: 38vh;
+    left: 6vw;
+    top: 9vw;
+    z-index: 1;
+    
+}
+.quadradoGG{
+    position: absolute;
+    width: 100%;
+    height: 58vh;
+    top: 29vw;
+    z-index: 0;
+    
+}
+
+.encanador{
+    position: absolute;
+    width: 30vw;
+    height: 24vh;
+    left: 9vw;
+    top: 3vw;
+    z-index: 2;
+    
+}
+
+.Stexto {
+    position: absolute;
+    top: 49vw;
+    left: 4vw; 
+    font-size: 1.3rem;
+    color: white;
+    z-index: 1;
+    width: 80vw; 
+}
+}
+
 /* segunda parte */
 
 /* terceira parte */
@@ -329,6 +389,58 @@ body {
 }
 
 
+@media (max-width: 999px) {
+.top2{
+    width: 100%;
+    height: 16vh;
+    display: grid;
+    position: relative;
+    top: 150vh;
+    place-items: center;
+    background: linear-gradient(to right, #382158,#322D73,#251E8D);
+    color: #fff;
+    font-family: 'Helvetica';
+
+
+
+}
+
+.terceiro{ 
+    width: 100%;
+    height: 86vh;
+    background-color: #23488C;
+    position: absolute;
+    display: flex;
+    gap: 4vw;
+    justify-content: center;
+    top: 186vh;
+}
+
+.missao, .visao, .valores{
+    position: relative;
+    width: 27vw;
+    height: 5vh;
+    left: 2vw;
+    top: 11vh;
+    color: #fff;
+    font-family: 'Helvetica';
+    text-align: center;
+
+
+}
+
+.terceirotexto{
+    background-color: #1F1C4C;
+    margin-top: 5rem;
+    display: block;
+    border: 1rem solid, #1F1C4C;
+    box-sizing: border-box;
+    border-radius:1rem;
+    text-align: left;
+    font-size: 0.7rem;
+
+}
+}
 
 
 
