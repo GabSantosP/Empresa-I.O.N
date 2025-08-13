@@ -380,11 +380,11 @@ body {
     background-color: #1F1C4C;
     margin-top: 5rem;
     display: block;
-    border: 4rem solid, #1F1C4C;
+    border: 2rem solid, #1F1C4C;
     box-sizing: border-box;
     border-radius:1rem;
     text-align: left;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 
 }
 
@@ -447,3 +447,4 @@ body {
 
 
 /* terceira parte */
+
