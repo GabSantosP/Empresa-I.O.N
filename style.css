@@ -24,7 +24,7 @@ a:hover {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     font-family: Arial;
     font-size: 1.3rem;
@@ -447,4 +447,5 @@ body {
 
 
 /* terceira parte */
+
 
