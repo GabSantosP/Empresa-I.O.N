@@ -42,3 +42,48 @@ const mobileNavbar = new MobileNavbar(
 );
 
 mobileNavbar.init();
+
+/* Animação */
+
+function typeWriter(elementId, text, speed, callback) {
+    const el = document.getElementById(elementId);
+    el.innerHTML = ""; // limpa antes de escrever
+    let i = 0;
+
+    // Cria o cursor e adiciona ao elemento
+    const cursor = document.createElement("span");
+    cursor.classList.add("cursor");
+    el.appendChild(cursor);
+
+    function typing() {
+        if (i < text.length) {
+            const char = text.charAt(i);
+
+            if (char === '\n') {
+                el.insertBefore(document.createElement("br"), cursor);
+            } else {
+                const span = document.createElement("span");
+                span.textContent = char;
+                el.insertBefore(span, cursor);
+            }
+
+            i++;
+            setTimeout(typing, speed);
+        } else if (callback) {
+            // Remover cursor do atual e passar pro próximo
+            cursor.remove();
+            callback();
+        }
+    }
+
+    typing();
+}
+
+// Textos com quebra de linha usando \n
+const text1 = "Fazendo do seu\npresente o seu\nfuturo.";
+const text2 = "A empresa que informatiza\no seu negócio.";
+
+// Roda com o cursor animado
+typeWriter("typewriter1", text1, 50, () => {
+    typeWriter("typewriter2", text2, 50);
+});
