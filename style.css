@@ -35,6 +35,7 @@ nav {
     left: 0;
     width: 100%;
     z-index: 1000; 
+    padding-left: 20px;
 }
 
 
@@ -46,11 +47,13 @@ body {
 .nav-list {
     list-style: none;
     display: flex;
+    margin-left: 300px;
 }
 
 .nav-list li {
     letter-spacing: 0.1rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    padding-right: 50px;
 }
 
 .mobile-menu {
@@ -141,8 +144,8 @@ body {
 .apresenta {
     position: absolute;
     color: #fff;
-    top: 12vh;      
-    left: 3vw;      
+    top: 17vh;      
+    left: 5vw;      
     font-size: 3vw; 
     font-family: 'Helvetica';
     letter-spacing: 0.2vw;
@@ -153,7 +156,7 @@ body {
     margin-top: 3rem;
     position: absolute;
     color: #fff;
-    top: 40vh;
+    top: 45vh;
     left: 5vw;
     font-size: 2vw;
     font-family: 'Arial';
@@ -442,10 +445,24 @@ body {
 }
 }
 
+/*animação*/
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: white;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 
-
-
-/* terceira parte */
 
 
