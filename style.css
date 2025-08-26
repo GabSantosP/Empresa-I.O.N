@@ -559,7 +559,7 @@ body {
   }
 
   .switch-container {
-    top: 12px;
+    top: 2.5vh;
     right: 20vw;
     left: auto;
   }
@@ -679,3 +679,4 @@ body {
 }
 
 /* responsivo */
+
