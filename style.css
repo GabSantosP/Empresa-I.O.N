@@ -570,7 +570,7 @@ body {
     right: 0px;
     width: 40vw;
     height: 92vh;
-    background: #7a7af1c7;
+    background: #091137d9;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -579,6 +579,10 @@ body {
     z-index: 999; 
     margin-left: 0;
   }
+
+    body.light-mode .nav-list{
+        background: #7a7af1c7;
+    }
 
   .nav-list li {
     margin-left: 0px;
@@ -679,4 +683,5 @@ body {
 }
 
 /* responsivo */
+
 
