@@ -3,6 +3,95 @@
     padding: 0;
 }
 
+/* trocar modo claro e escuro */
+.switch-container {
+  position: absolute;
+  left: 58rem;
+  top: 15px;
+  z-index: 1100;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #2a2a4a;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 3px; bottom: 3px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #e8e8f8;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* trocar modo claro e escuro */
+
+/* Modo claro */
+
+body.light-mode nav {
+  background: #7a7af1c7;
+}
+
+body.light-mode .nav-list li a,
+body.light-mode .nav-list li {
+  color: #000000 !important;
+}
+
+body.light-mode .missao, 
+body.light-mode .visao, 
+body.light-mode .valores {
+  color: #000000 !important;
+}
+
+body.light-mode .espaco{
+  background-color: #cfcdf9;
+  color: #222;
+}
+
+body.light-mode .terceirotexto {
+  background-color: #7a72eb;
+  color: #222;
+  border: 1rem solid, #7a72eb;
+}
+
+body.light-mode .top1,
+body.light-mode .top2 {
+  background: linear-gradient(to right, #cdc9fd,#b6b3fa,#9d9be5);
+  color: #222;
+}
+
+body.light-mode .segundo {
+  background-color: #cfcdf9;
+}
+
+body.light-mode .terceiro {
+  background-color: #cfcdf9;
+}
+
+/* Modo claro */
 
 a {
     color: #fff;
@@ -463,6 +552,130 @@ body {
   100% { opacity: 1; }
 }
 
+/* responsivo */
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
 
+  .switch-container {
+    top: 12px;
+    right: 20vw;
+    left: auto;
+  }
 
+  .nav-list {
+    position: fixed; 
+    top: 8vh;
+    right: 0px;
+    width: 40vw;
+    height: 92vh;
+    background: #7a7af1c7;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    z-index: 999; 
+    margin-left: 0;
+  }
 
+  .nav-list li {
+    margin-left: 0px;
+    opacity: 0;
+    padding-right: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    right: 14px;
+  }
+
+  /* Primeira parte */
+  .apresenta {
+    top: 18vh;      
+    left: 3vw;      
+    font-size: 7vw; 
+    letter-spacing: 0.3vw;
+    word-spacing: 1.5vw;
+  }
+
+  .apresenta2 {
+    margin-top: 2rem;
+    top: 38vh;
+    left: 4vw;
+    font-size: 4vw;
+    letter-spacing: 0.25vw;
+    word-spacing: 1vw;
+  }
+
+  /* Espaço */
+  .espaco {
+    top: 80vh;
+    height: 5vh;
+  }
+
+  /* Segunda parte */
+  .top1 {
+    height: 15vh;
+  }
+
+  .segundo {
+    height: 70vh;
+    top: 100vh;
+  }
+
+  .quadrado {
+    width: 42vw;
+    height: 38vh;
+    left: 6vw;
+    top: 9vw;
+  }
+
+  .quadradoGG {
+    height: 58vh;
+    top: 29vw;
+  }
+
+  .encanador {
+    width: 30vw;
+    height: 24vh;
+    left: 9vw;
+    top: 3vw;
+  }
+
+  .Stexto {
+    top: 49vw;
+    left: 4vw; 
+    font-size: 1.3rem;
+    width: 80vw; 
+  }
+
+  /* Terceira parte */
+  .top2 {
+    height: 16vh;
+    top: 150vh;
+  }
+
+  .terceiro {
+    height: 86vh;
+    gap: 4vw;
+    top: 186vh;
+  }
+
+  .missao, .visao, .valores {
+    width: 27vw;
+    height: 5vh;
+    left: 2vw;
+    top: 11vh;
+    font-size: 1rem;
+  }
+
+  .terceirotexto {
+    margin-top: 5rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* responsivo */
