@@ -87,3 +87,27 @@ const text2 = "A empresa que informatiza\no seu negócio.";
 typeWriter("typewriter1", text1, 50, () => {
     typeWriter("typewriter2", text2, 50);
 });
+
+/* mudar modo claro e escuro */
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const logo = document.getElementById('logo');
+
+const darkLogoSrc = './vetores/logo_escuro.png';
+const lightLogoSrc = './vetores/logo_claro.png';
+
+function setTheme(isLight) {
+  if (isLight) {
+    body.classList.add('light-mode');
+    logo.src = lightLogoSrc;
+  } else {
+    body.classList.remove('light-mode');
+    logo.src = darkLogoSrc;
+  }
+}
+
+themeToggle.addEventListener('change', function () {
+  setTheme(this.checked);
+  localStorage.setItem('theme', this.checked ? 'light' : 'dark');
+});
+/* mudar modo claro e escuro */
