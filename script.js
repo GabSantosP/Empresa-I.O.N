@@ -80,7 +80,7 @@ function typeWriter(elementId, text, speed, callback) {
 }
 
 // Textos com quebra de linha usando \n
-const text1 = "Fazendo do seu\npresente o seu\nfuturo.";
+const text1 = "Inovação,\nTrabalho,\ne Conexão";
 const text2 = "A empresa que informatiza\no seu negócio.";
 
 // Roda com o cursor animado
@@ -88,26 +88,58 @@ typeWriter("typewriter1", text1, 50, () => {
     typeWriter("typewriter2", text2, 50);
 });
 
-/* mudar modo claro e escuro */
+// Seleção de elementos
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 const logo = document.getElementById('logo');
 
-const darkLogoSrc = './vetores/logo_escuro.png';
-const lightLogoSrc = './vetores/logo_claro.png';
+const icons = [
+  document.getElementById('icon1'),
+  document.getElementById('icon2'),
+  document.getElementById('icon3')
+];
 
+// Caminhos das imagens
+const darkLogoSrc = './vetores/logo_escuro.png';
+const lightLogoSrc = './vetores/logo_escuro.png';
+
+const iconEscuro1 = './vetores/icon1_escuro.png';
+const iconEscuro2 = './vetores/icon2_escuro.png';
+const iconEscuro3 = './vetores/icon3_escuro.png';
+
+const iconClaro1 = './vetores/icon1_claro.png';
+const iconClaro2 = './vetores/icon2_claro.png';
+const iconClaro3 = './vetores/icon3_claro.png';
+
+// Função única para trocar tema
 function setTheme(isLight) {
   if (isLight) {
     body.classList.add('light-mode');
     logo.src = lightLogoSrc;
+    icons[0].src = iconClaro1;
+    icons[1].src = iconClaro2;
+    icons[2].src = iconClaro3;
   } else {
     body.classList.remove('light-mode');
     logo.src = darkLogoSrc;
+    icons[0].src = iconEscuro1;
+    icons[1].src = iconEscuro2;
+    icons[2].src = iconEscuro3;
   }
 }
 
+// Evento do toggle
 themeToggle.addEventListener('change', function () {
   setTheme(this.checked);
   localStorage.setItem('theme', this.checked ? 'light' : 'dark');
 });
-/* mudar modo claro e escuro */
+
+// Opcional: mantém o tema salvo ao recarregar a página
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  const isLight = savedTheme === 'light';
+  themeToggle.checked = isLight;
+  setTheme(isLight);
+}
+
+
