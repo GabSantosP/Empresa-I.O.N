@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}  
+
 /* trocar modo claro e escuro */
 .switch-container {
   position: absolute;
@@ -666,5 +672,6 @@ body {
 }
 }
 /* responsivo */
+
 
 
