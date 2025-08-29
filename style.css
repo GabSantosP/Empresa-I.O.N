@@ -460,58 +460,6 @@ body {
 
 
 
-@media (max-width: 999px) {
-.top2{
-    width: 100%;
-    height: 16vh;
-    display: grid;
-    position: relative;
-    top: 150vh;
-    place-items: center;
-    background: linear-gradient(to right, #382158,#322D73,#251E8D);
-    color: #fff;
-    font-family: 'Helvetica';
-
-
-
-}
-
-.terceiro{ 
-    width: 100%;
-    height: 86vh;
-    background-color: #23488C;
-    position: absolute;
-    display: flex;
-    gap: 4vw;
-    justify-content: center;
-    top: 186vh;
-}
-
-.missao, .visao, .valores{
-    position: relative;
-    width: 27vw;
-    height: 5vh;
-    left: 2vw;
-    top: 11vh;
-    color: #fff;
-    font-family: 'Helvetica';
-    text-align: center;
-
-
-}
-
-.terceirotexto{
-    background-color: #1F1C4C;
-    margin-top: 5rem;
-    display: block;
-    border: 1rem solid, #1F1C4C;
-    box-sizing: border-box;
-    border-radius:1rem;
-    text-align: left;
-    font-size: 0.7rem;
-
-}
-}
 
 /*animação*/
 
@@ -673,29 +621,49 @@ body {
 
 /* Terceira parte */
 .top2 {
+    width: 100%;
     height: 16vh;
+    display: grid;
+    position: relative;
     top: 150vh;
+    place-items: center;
+    background: linear-gradient(to right, #382158,#322D73,#251E8D);
+    color: #fff;
+    font-family: 'Helvetica';
 }
 
 .terceiro {
+    width: 100%;
     height: 86vh;
-    gap: 4vw;
+    background-color: #23488C;
+    position: absolute;
+    display: flex;
+    gap: 5.1vw;
+    justify-content: center;
     top: 186vh;
 }
 
 .missao, .visao, .valores {
+    position: relative;
     width: 27vw;
     height: 5vh;
     left: 2vw;
-    top: 11vh;
-    font-size: 1rem;
+    top: 40%;
+    color: #fff;
+    font-family: 'Helvetica';
+    text-align: center;
+
 }
 
-.terceirotexto {
+.terceirotexto{
     margin-top: 5rem;
-    font-size: 0.7rem;
-}
-}
+    display: block;
+    box-sizing: border-box;
+    border-radius:1rem;
+    text-align: left;
+    font-size: 0.6em;
 
+}
+}
 /* responsivo */
 
