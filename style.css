@@ -1,15 +1,25 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Fonte */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Imagens */
 img {
   -webkit-user-drag: none;
   user-select: none;
   pointer-events: none;
-}  
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-/* trocar modo claro e escuro */
+/* Trocar modo claro e escuro */
 .switch-container {
   position: absolute;
   left: 56rem;
@@ -24,14 +34,16 @@ img {
   height: 26px;
 }
 
-.switch input { display: none; }
+.switch input {
+  display: none;
+}
 
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0; 
-  left: 0; 
-  right: 0; 
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
   background-color: #2a2a4a;
   border-radius: 34px;
@@ -41,9 +53,9 @@ img {
 .slider:before {
   position: absolute;
   content: "";
-  height: 20px; 
+  height: 20px;
   width: 20px;
-  left: 3px; 
+  left: 3px;
   bottom: 3px;
   background-color: #fff;
   border-radius: 50%;
@@ -58,434 +70,192 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/* trocar modo claro e escuro */
-
 /* Modo claro */
-
-body.light-mode nav {
-  background: #7a7af1c7;
-}
-
+body.light-mode nav,
 body.light-mode .nav-list {
-  background: #7a7af1c7;
+  background: #09113798;
 }
 
 body.light-mode .nav-list li a,
 body.light-mode .nav-list li {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
-body.light-mode .missao, 
-body.light-mode .visao, 
+body.light-mode .missao,
+body.light-mode .visao,
 body.light-mode .valores {
   color: #000000 !important;
 }
 
-body.light-mode .espaco{
-  background-color: #cfcdf9;
+body.light-mode .espaco:disabled {
+  background-color: #ffffff;
   color: #222;
 }
 
 body.light-mode .terceirotexto {
-  background-color: #7a72eb;
+  background-color: #80eb72;
   color: #222;
-  border: 1rem solid, #7a72eb;
+  border: 1rem solid #7a72eb;
+  border-radius: 1rem;
+}
+
+body.light-mode .Stexto {
+  color: rgb(6, 0, 59);
 }
 
 body.light-mode .top1,
 body.light-mode .top2 {
-  background: linear-gradient(to right, #cdc9fd,#b6b3fa,#9d9be5);
-  color: #222;
+  background: linear-gradient(to right, #382158, #322D73, #251E8D);
+  color: #ffffff;
 }
 
-body.light-mode .segundo {
-  background-color: #cfcdf9;
-}
-
+body.light-mode .segundo,
 body.light-mode .terceiro {
-  background-color: #cfcdf9;
+  background-color: #ffffff;
+  color: black;
 }
 
-/* Modo claro */
-
+/* Links */
 a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.logo{
-    height: 120px;
-    height: 120px;
+  color: #fff;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/*tudo a baixo é menu*/
+/* Logo */
+.logo {
+  height: 120px;
+}
 
+/* Menu */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: Arial;
-    font-size: 1.3rem;
-    background: #091137d9;
-    height: 8vh;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; 
-    padding-left: 20px;
-}
-
-
-body {
-    padding-top: 0;
-    margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial;
+  font-size: 1.3rem;
+  background: #09113798;
+  height: 8vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding-left: 20px;
 }
 
 .nav-list {
-    list-style: none;
-    display: flex;
-    margin-left: 300px;
+  list-style: none;
+  display: flex;
+  margin-left: 300px;
 }
 
 .nav-list li {
-    letter-spacing: 0.1rem;
-    margin-left: 1rem;
-    padding-right: 50px;
+  letter-spacing: 0.1rem;
+  margin-left: 1rem;
+  padding-right: 50px;
 }
 
 .mobile-menu {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
 }
 
 .mobile-menu div {
-    width: 2rem;
-    height: 0.2rem;
-    background: #fff;
-    margin: 0.5rem;
-    transition: 0.3s;
-}
-
-@media (max-width: 999px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    .nav-list {
-        position: fixed; 
-        top: 8vh;
-        right: 0px;
-        width: 40vw;
-        height: 92vh;
-        background: #091137d9;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-        z-index: 999; 
-    }
-
-    .nav-list li {
-        margin-left: 0px;
-        opacity: 0;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
+  width: 2rem;
+  height: 0.2rem;
+  background: #fff;
+  margin: 0.5rem;
+  transition: 0.3s;
 }
 
 .nav-list.active {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
 
 @keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.mobile-menu.active .line1{
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.mobile-menu.active .line2{
+  from {
     opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.mobile-menu.active .line3{
-        transform: rotate(45deg) translate(-5px, -7px);
-    
+/* ========================================================= */
+/* ===== ESTILOS ORIGINAIS PARA DESKTOP (MANTIDOS) ===== */
+/* ========================================================= */
+.primeiro { position: relative; }
+.capa { width: 100%; height: 80vh; position: absolute; top: 0; object-fit: cover; }
+.apresenta { position: absolute; color: #fff; top: 17vh; left: 5vw; font-size: 3vw; font-family: 'Helvetica'; letter-spacing: 0.2vw; word-spacing: 1vw; }
+.apresenta2 { margin-top: 3rem; position: absolute; color: #fff; top: 45vh; left: 5vw; font-size: 2vw; font-family: 'Arial'; letter-spacing: 0.15vw; word-spacing: 0.8vw; }
+.espaco { position: relative; top: 80vh; text-align: center; background-color: #091137; width: 100%; height: 5vh; }
+
+.top1 { width: 100%; height: 14vh; display: grid; position: relative; top: 80vh; place-items: center; background: linear-gradient(to right, #382158, #322D73, #251E8D); color: #fff; font-family: 'Helvetica'; }
+
+.segundo { width: 100%; height: 90vh; background-color: #1C1B2A; position: absolute; top: 99vh; }
+.Stexto { position: absolute; top: 6vw; left: 5%; justify-content: left; text-align: left; font-size: 2.3rem; z-index: 1; width: 38vw; color: #fff; }
+
+.icon1, .icon2, .icon3 { position: absolute; z-index: 1; animation: float 3.8s ease-in-out infinite; }
+.icon1 { width: 31vw; left: 50%; top: -6vw; }
+.icon2 { width: 31vw; left: 65%; top: 7vw; animation-duration: 4.2s; }
+.icon3 { width: 31vw; left: 50%; top: 19vw; animation-duration: 8s; }
+
+.top2 { width: 100%; height: 14vh; display: grid; position: relative; top: 167vh; place-items: center; background: linear-gradient(to right, #382158, #322D73, #251E8D); color: #fff; font-family: 'Helvetica'; }
+
+.terceiro { width: 100%; height: 90vh; background-color: #1C1B2A; position: absolute; display: flex; gap: 7vw; justify-content: center; top: 200vh; }
+.missao,
+.visao,
+.valores {
+  justify-content: space-between;
+  text-align: justify;
+  position: relative;
+  font-size: 30px;
+  top: 35vh;
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
 }
-/* tudo acima é do menu*/
+.mvv1, .mvv2, .mvv3 { position: absolute; width: 35vw; height: auto; top: 10vh; z-index: 1; }
+.mvv1 { left: 0%; }
+.mvv2 { left: 32.5%; }
+.mvv3 { left: 65%; }
 
-/* primeira parte */
-.primeiro{
-    position: relative;
-}
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
+.cursor { display: inline-block; width: 2px; height: 1em; background-color: white; margin-left: 2px; animation: blink 0.7s infinite; vertical-align: bottom; }
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+.wave-background { position: absolute; bottom: 0; left: 0; width: 100%; height: 100vh; overflow: hidden; z-index: 0; }
+.wave-background svg { width: 200%; height: 100%; }
+.wave { opacity: 0.8; }
+.wave1 { fill: #4652b9; animation: wave1 15s linear infinite; }
+.wave2 { fill: #1c2f81; animation: wave2 12s linear infinite; }
+.wave3 { fill: #3a2f75; animation: wave3 20s linear infinite; }
+@keyframes wave1 { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes wave2 { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes wave3 { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-.capa{
-    width: 100%;
-    height: 80vh;
-    position: absolute;
-    top: 0px;
-}
-
-.apresenta {
-    position: absolute;
-    color: #fff;
-    top: 17vh;      
-    left: 5vw;      
-    font-size: 3vw; 
-    font-family: 'Helvetica';
-    letter-spacing: 0.2vw;
-    word-spacing: 1vw;
-}
-
-.apresenta2 {
-    margin-top: 3rem;
-    position: absolute;
-    color: #fff;
-    top: 45vh;
-    left: 5vw;
-    font-size: 2vw;
-    font-family: 'Arial';
-    letter-spacing: 0.15vw;
-    word-spacing: 0.8vw;
-}
-
-
-@media (max-width: 999px) {
-
-    .primeiro{
-        position: relative;
-    }
-
-    .capa{
-    width: 100%;
-    height: 80vh;
-    position: absolute;
-    top: 0px;
-    }
-
-    
-    .apresenta {
-        top: 18vh;      
-        left: 3vw;      
-        font-size: 7vw; 
-        letter-spacing: 0.3vw;
-        word-spacing: 1.5vw;
-    }
-
-    .apresenta2 {
-        margin-top: 2rem;
-        top: 38vh;
-        left: 4vw;
-        font-size: 4vw;
-        letter-spacing: 0.25vw;
-        word-spacing: 1vw;
-    }
-}
-
-
-
-
-.espaco{
-    position: relative;
-    top: 80vh;
-    text-align: center;
-    background-color: #1C1B2A;
-    width: 100%;
-    height: 5vh;
-
-}
-
-/* primeira parte */
-
-/* segunda parte */
-
-.top1{
-    width: 100%;
-    height: 14vh;
-    display: grid;
-    position: relative;
-    top: 80vh;
-    place-items: center;
-    background: linear-gradient(to right, #382158,#322D73,#251E8D);
-    color: #fff;
-    font-family: 'Helvetica';
-
-
-}
-
-.segundo{ 
-    width: 100%;
-    height: 90vh;
-    background-color: #1C1B2A;
-    position: absolute;
-    top: 99vh;
-}
-
-.quadrado{
-    position: absolute;
-    width: 37vw;
-    height: 78vh;
-    left: 6vw;
-    top: 4vw;
-    z-index: 1;
-    
-}
-
-.Stexto {
-    position: absolute;
-    top: 10vw;
-    left: 7vw; 
-    font-size: 3rem;
-    color: white;
-    z-index: 1;
-    width: 38vw; 
-}
-
-/*imagens*/
-.missao1{
-    position: absolute;
-    width: 20vw;
-    height: 30vh;
-    left: 75vw;
-    top: 6vw;
-    z-index: 1;
-    
-}
-
-.missao2{
-    position: absolute;
-    width: 30vw;
-    height: 45vh;
-    left: 55vw;
-    top: 20vw;
-    z-index: 1;
-    
-}
-
-.missao3{
-    position: absolute;
-    width: 20vw;
-    height: 30vh;
-    left: 45vw;
-    top: 6vw;
-    z-index: 1;
-    
-}
-/*imagens*/
-
-
-/* segunda parte */
-
-/* terceira parte */
-
-.top2{
-    width: 100%;
-    height: 14vh;
-    display: grid;
-    position: relative;
-    top: 167vh;
-    place-items: center;
-    background: linear-gradient(to right, #382158,#322D73,#251E8D);
-    color: #fff;
-    font-family: 'Helvetica';
-
-
-
-}
-
-.terceiro{ 
-    width: 100%;
-    height: 90vh;
-    background-color: #23488C;
-    position: absolute;
-    display: flex;
-    gap: 7vw;
-    justify-content: center;
-    top: 200vh;
-}
-
-.missao, .visao, .valores{
-    position: relative;
-    width: 25vw;
-    height: 50vh;
-    left: 2vw;
-    top: 35vh;
-    color: #fff;
-    font-family: 'Helvetica';
-    text-align: center;
-    z-index: 1;
-
-}
-
-.terceirotexto{
-    margin-top: 5rem;
-    display: block;
-    box-sizing: border-box;
-    text-align: left;
-    font-size: 1.5rem;
-}
-
-.mvv1, .mvv2, .mvv3{
-    position: absolute;
-    width: 27vw;
-    height: 56vh;
-    top: 19vh;
-    z-index: 1;
-}
-
-.mvv1{
-  left: 5.5%;
-}
-
-.mvv2{
-  left: 38%;
-}
-
-.mvv3{
-  left: 70.5%
-}
-
-
-
-
-/*animação*/
-
-.cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background-color: white;
-  margin-left: 2px;
-  animation: blink 0.7s infinite;
-  vertical-align: bottom;
-}
-
-@keyframes blink {
-  0%   { opacity: 1; }
-  50%  { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* responsivo */
+/* ====================================================== */
+/* ====== RESPONSIVO - CORRIGIDO ====== */
+/* ====================================================== */
 @media (max-width: 999px) {
   body {
     overflow-x: hidden;
@@ -498,9 +268,9 @@ body {
   }
 
   .nav-list {
-    position: fixed; 
+    position: fixed;
     top: 8vh;
-    right: 0px;
+    right: 0;
     width: 40vw;
     height: 92vh;
     background: #091137d9;
@@ -509,12 +279,12 @@ body {
     justify-content: space-around;
     transform: translateX(100%);
     transition: transform 0.3s ease-in;
-    z-index: 999; 
+    z-index: 999;
     margin-left: 0;
   }
 
   .nav-list li {
-    margin-left: 0px;
+    margin-left: 0;
     opacity: 0;
     padding-right: 0;
   }
@@ -525,153 +295,138 @@ body {
     right: 14px;
   }
 
-  /* Primeira parte */
+  /* Deixa a capa ocupando 100% da altura da tela */
+  .primeiro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .capa {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Agora ocupa toda a tela no mobile */
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    display: block;
+    z-index: 0;
+  }
+
+  /* Ajuste do texto para garantir que apareça sobre a capa */
   .apresenta {
-    top: 18vh;      
-    left: 3vw;      
-    font-size: 7vw; 
+    top: 25vh;
+    left: 5vw;
+    font-size: 7vw;
     letter-spacing: 0.3vw;
     word-spacing: 1.5vw;
+    color: #fff;
+    position: absolute;
+    z-index: 2; /* Garante que fica por cima da imagem */
+    max-width: 90%;
   }
 
   .apresenta2 {
     margin-top: 2rem;
-    top: 38vh;
-    left: 4vw;
+    top: 42vh;
+    left: 5vw;
     font-size: 4vw;
     letter-spacing: 0.25vw;
     word-spacing: 1vw;
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    max-width: 90%;
   }
 
-  /* Espaço */
+  /* Ajuste de fluxo das seções */
+  .espaco,
+  .top1,
+  .segundo,
+  .top2,
+  .terceiro {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    height: auto;
+  }
+
   .espaco {
-    top: 80vh;
-    height: 5vh;
+    display: none;
   }
 
-  /* Segunda parte */
-  
-.top1{
-    width: 100%;
-    height: 15vh;
-    display: grid;
-    position: relative;
-    top: 80vh;
-    place-items: center;
-    background: linear-gradient(to right, #382158,#322D73,#251E8D);
-    color: #fff;
-    font-family: 'Helvetica';
-
-
-}
-
-.segundo{ 
-    width: 100%;
-    height: 75%;
-    background-color: #1C1B2A;
-    position: absolute;
-    top: 100vh;
-}
-
-.quadrado{
-    position: absolute;
-    width:50%;
-    height: 80%;
-    left: 25%;
-    top: 18%;
-    z-index: 1;
-    
-}
-
-
-.Stexto {
-    position: absolute;
-    top: 19%;
-    left: 30%; 
-    font-size: 1.2em;
-    color: white;
-    z-index: 1;
-    width: 40%; 
-}
-
-.missao1{
-    position: absolute;
-    width: 19%;
-    height: 18%;
-    left: 77%;
-    top: 25%;
-    z-index: 1;
-    
-}
-
-.missao2{
-    position: absolute;
-    width: 19%;
-    height: 18%;
-    left: 5%;
-    top: 40%;
-    z-index: 1;
-    
-}
-
-.missao3{
-    position: absolute;
-    width: 19%;
-    height: 18%;
-    left: 39%;
-    top: 1%;
-    z-index: 1;
-    
-}
-  
-
-/* Terceira parte */
-.top2 {
-    width: 100%;
-    height: 16vh;
-    display: grid;
-    position: relative;
-    top: 150vh;
-    place-items: center;
-    background: linear-gradient(to right, #382158,#322D73,#251E8D);
-    color: #fff;
-    font-family: 'Helvetica';
-}
-
-.terceiro {
-    width: 100%;
-    height: 86vh;
-    background-color: #23488C;
-    position: absolute;
+  /* Seção "Nossa Empresa" */
+  .segundo {
     display: flex;
-    gap: 5.1vw;
-    justify-content: center;
-    top: 186vh;
-}
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    gap: 3rem;
+  }
 
-.missao, .visao, .valores {
-    position: relative;
+  .Stexto {
+    position: static;
+    width: 90%;
+    font-size: 1.3rem;
+    text-align: center;
+    order: 1;
+  }
+
+  .icons-container {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    order: 2;
+  }
+
+  .icon1,
+  .icon2,
+  .icon3 {
+    position: static;
+    width: 60%;
+    max-width: 250px;
+    left: auto;
+    top: auto;
+  }
+
+  /* Seção MVV */
+  .terceiro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 1rem;
+    overflow: hidden;
+  }
+
+  .missao,
+  .visao,
+  .valores {
     width: 27vw;
     height: 5vh;
-    left: 2vw;
     top: 40%;
-    color: #fff;
-    font-family: 'Helvetica';
-    text-align: center;
+    position: static;
+  }
 
-}
+  .mvv1,
+  .mvv2,
+  .mvv3 {
+    position: relative;
+    width: 80%;
+    max-width: 350px;
+    left: auto;
+    top: auto;
+  }
 
-.terceirotexto{
-    margin-top: 5rem;
-    display: block;
-    box-sizing: border-box;
-    border-radius:1rem;
-    text-align: left;
+  .terceirotexto {
     font-size: 0.6em;
-
+    border-radius: 1rem;
+  }
 }
-}
-/* responsivo */
 
 
 
