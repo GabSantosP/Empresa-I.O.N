@@ -20,23 +20,9 @@ img {
 }
 
 /* Trocar modo claro e escuro */
-.switch-container {
-  position: absolute;
-  left: 56rem;
-  top: 15px;
-  z-index: 1100;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 26px;
-}
-
-.switch input {
-  display: none;
-}
+.switch-container { margin-left: 2rem; display: flex; align-items: center; }
+.switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+.switch input { display: none; }
 
 .slider {
   position: absolute;
@@ -73,7 +59,7 @@ input:checked + .slider:before {
 /* Modo claro */
 body.light-mode nav,
 body.light-mode .nav-list {
-  background: #09113798;
+  background: #091137d9;
 }
 
 body.light-mode .nav-list li a,
@@ -139,7 +125,7 @@ nav {
   align-items: center;
   font-family: Arial;
   font-size: 1.3rem;
-  background: #09113798;
+  background: #091137d9;
   height: 8vh;
   position: fixed;
   top: 0;
@@ -201,9 +187,7 @@ nav {
   }
 }
 
-/* ========================================================= */
-/* ===== ESTILOS ORIGINAIS PARA DESKTOP (MANTIDOS) ===== */
-/* ========================================================= */
+
 .primeiro { position: relative; }
 .capa { width: 100%; height: 80vh; position: absolute; top: 0; object-fit: cover; }
 .apresenta { position: absolute; color: #fff; top: 17vh; left: 5vw; font-size: 3vw; font-family: 'Helvetica'; letter-spacing: 0.2vw; word-spacing: 1vw; }
@@ -240,6 +224,53 @@ nav {
 .mvv2 { left: 32.5%; }
 .mvv3 { left: 65%; }
 
+/* parte da ods */
+
+.quarto{
+    width: 100%; 
+    height: 100vh; 
+    background-color: #1c3773; 
+    position: absolute; 
+    display: flex; 
+    gap: 7vw; 
+    justify-content: center; 
+    top: 290vh;
+}
+
+.odstitulo{ 
+  position: absolute; 
+  width: 55vw; 
+  height: auto; 
+  top: 4%; 
+  z-index: 1; 
+  left: 0%;
+}
+
+.odstexto{
+  position: absolute;
+  font-size: 1.7em;
+  top: 45%;
+  left: 40%;
+  color: #ffffff;
+  justify-content: left;
+  z-index: 1;
+  width: 50%;
+
+
+}
+
+.ods{
+  position: absolute; 
+  width: 25%; 
+  height: auto; 
+  top: 35%; 
+  z-index: 1; 
+  left: 5%;
+}
+
+/* parte da ods */
+
+
 @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
 .cursor { display: inline-block; width: 2px; height: 1em; background-color: white; margin-left: 2px; animation: blink 0.7s infinite; vertical-align: bottom; }
 @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
@@ -257,64 +288,20 @@ nav {
 /* ====== RESPONSIVO - CORRIGIDO ====== */
 /* ====================================================== */
 @media (max-width: 999px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  .switch-container {
-    top: 2.5vh;
-    right: 20vw;
-    left: auto;
-  }
-
-  .nav-list {
-    position: fixed;
-    top: 8vh;
-    right: 0;
-    width: 40vw;
-    height: 92vh;
-    background: #091137d9;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
-    z-index: 999;
-    margin-left: 0;
-  }
-
-  .nav-list li {
-    margin-left: 0;
-    opacity: 0;
-    padding-right: 0;
-  }
-
-  .mobile-menu {
-    display: block;
-    position: absolute;
-    right: 14px;
-  }
-
-  /* Deixa a capa ocupando 100% da altura da tela */
-  .primeiro {
+  body { overflow-x: hidden; }
+  .nav-list { position: fixed; top: 8vh; right: 0; width: 60vw; height: 92vh; background: #091137e6; flex-direction: column; align-items: center; justify-content: space-around; transform: translateX(100%); transition: transform 0.3s ease-in; margin-left: 0; }
+  .nav-list li { margin-left: 0; opacity: 0; }
+  .mobile-menu { display: block; }
+  .switch-container { position: absolute; top: 50%; right: 4.5rem; transform: translateY(-50%); margin: 0; }
+  body.light-mode .nav-list { background: #091137d9; }
+  .top1, .segundo, .top2, .terceiro, .quarto { position: relative !important; top: auto !important; left: auto !important; height: auto !important; width: 100% !important; padding: 3rem 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .primeiro {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
   }
-
-  .capa {
-    position: absolute;
-    width: 100%;
-    height: 100vh; /* Agora ocupa toda a tela no mobile */
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    display: block;
-    z-index: 0;
-  }
-
-  /* Ajuste do texto para garantir que apareça sobre a capa */
+  .capa { object-fit: cover; position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
   .apresenta {
     top: 25vh;
     left: 5vw;
@@ -339,95 +326,17 @@ nav {
     z-index: 2;
     max-width: 90%;
   }
-
-  /* Ajuste de fluxo das seções */
-  .espaco,
-  .top1,
-  .segundo,
-  .top2,
-  .terceiro {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    height: auto;
-  }
-
-  .espaco {
-    display: none;
-  }
-
-  /* Seção "Nossa Empresa" */
-  .segundo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 1rem;
-    gap: 3rem;
-  }
-
-  .Stexto {
-    position: static;
-    width: 90%;
-    font-size: 1.3rem;
-    text-align: center;
-    order: 1;
-  }
-
-  .icons-container {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    order: 2;
-  }
-
-  .icon1,
-  .icon2,
-  .icon3 {
-    position: static;
-    width: 60%;
-    max-width: 250px;
-    left: auto;
-    top: auto;
-  }
-
-  /* Seção MVV */
-  .terceiro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 4rem 1rem;
-    overflow: hidden;
-  }
-
-  .missao,
-  .visao,
-  .valores {
-    width: 27vw;
-    height: 5vh;
-    top: 40%;
-    position: static;
-  }
-
-  .mvv1,
-  .mvv2,
-  .mvv3 {
-    position: relative;
-    width: 80%;
-    max-width: 350px;
-    left: auto;
-    top: auto;
-  }
-
-  .terceirotexto {
-    font-size: 0.6em;
-    border-radius: 1rem;
-  }
+  .espaco { display: none; }
+  .top1, .top2 { padding: 2rem 1rem; }
+  .segundo { gap: 2rem; }
+  .Stexto { position: static; width: 90%; text-align: center; order: 1; }
+  .icons-container { position: static; display: flex; flex-direction: column; align-items: center; gap: 2rem; order: 2; }
+  .icon1, .icon2, .icon3 { position: static; width: 70%; max-width: 250px; animation: none; }
+  .terceiro { gap: 2rem; padding: 3rem 1rem; }
+  .mvv1, .mvv2, .mvv3 { position: static; width: 80%; max-width: 350px; }
+  .wave-background { display: none; }
+  .quarto { gap: 2rem; }
+  .odstitulo { position: static; width: 90%; max-width: 400px; order: 1; }
+  .ods { position: static; width: 50%; max-width: 200px; order: 2; }
+  .odstexto { position: static; width: 90%; text-align: center; font-size: 1.1em; order: 3; }
 }
-
-
-
-
